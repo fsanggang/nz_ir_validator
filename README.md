@@ -1,21 +1,41 @@
-# NzIrValidator
+# NzBankAccountValidator
 
-**TODO: Add description**
+[![Build Status](https://travis-ci.org/fsanggang/nz_ir_validator.svg?branch=master)](https://github.com/fsanggang/nz_ir_validator)
+[![Hex.pm](https://img.shields.io/hexpm/v/nz_ir_validator.svg)](https://hex.pm/packages/nz_ir_validator)
+
+
+Validator for NZ bank accounts.
+
+## Examples
+
+```elixir
+$ iex -S mix
+> NzIrValidator.is_valid?(49091850)
+{:ok, true}
+
+iex> NzIrValidator.is_valid?(9125568)
+{:error, false}
+```
+
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `nz_ir_validator` to your list of dependencies in `mix.exs`:
+Add `nz_ir_validator` to your list of dependencies in mix.exs:
 
 ```elixir
 def deps do
   [
-    {:nz_ir_validator, "~> 0.1.0"}
+    {:nz_ir_validator, "~> 1.0.0"}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/nz_ir_validator](https://hexdocs.pm/nz_ir_validator).
+Don’t forget to update your dependencies.
 
+```
+$ mix deps.get
+```
+
+## Links
+
+Implementation is based off https://www.ird.govt.nz/resources/d/8/d8e49dce-1bda-4875-8acf-9ebf908c6e17/rwt-nrwt-spec-2014.pdf.
